@@ -14,29 +14,42 @@ Modern CAPTCHA systems utilize intentional text distortion and noise patterns to
 **Key Features**
 
 • Segmentation-Free Recognition: The model predicts the complete CAPTCHA sequence directly, avoiding errors typically caused by manual character segmentation.
+
 • Sequential Modeling: Utilizes BiLSTM layers to capture context and relationships between characters, which is essential for decoding connected or overlapping text.
+
 • CTC-Based Decoding: Implements Connectionist Temporal Classification (CTC) to handle variable-length outputs and align input sequences with text labels efficiently.
+
 • Real-Time Deployment: Integrated into a Flask web application, allowing users to upload images and receive instant predictions with confidence scores.
+
 • Robustness: Engineered to handle various fonts, background interference, and heavy deformations.
 
 **System Architecture**
 
 The system follows a modular pipeline: Preprocessing → Feature Extraction → Sequence Modeling → Decoding.
+
 1. CNN Backbone: Learns hierarchical spatial features such as edges, curves, and textures.
+ 
 2. BiLSTM Layers: Processes feature sequences in both forward and backward directions to understand temporal dependencies.
+ 
 3. CTC Loss: Align predicted sequences with ground truth without requiring explicit character-level labels.
+   
 4. Flask Interface: Provides an interactive UI for image uploads and result visualization.
    
 **Technical Stack**
 
 • Deep Learning: TensorFlow, Keras
+
 • Computer Vision: OpenCV, Pillow (PIL)
+
 • Web Framework: Flask
+
 • Data Handling: NumPy
+
 • Development Environment: VS Code
 
 **Performance**
 
 The model was trained on a custom dataset featuring diverse fonts and noise levels.
 • Training Accuracy: The system achieved a high recognition reliability through careful tuning of hyperparameters.
+
 • Evaluation Accuracy: In testing scenarios, the model demonstrated a high success rate, with specific evaluations reaching 95.28% accuracy
